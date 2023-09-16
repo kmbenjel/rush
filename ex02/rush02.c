@@ -1,8 +1,8 @@
 void	ft_putchar(char c);
 
-int	in_edge_col(int x, int col)
+int	in_top_row(int row)
 {
-	if (col == 0 || col == x - 1)
+	if (row == 0)
 		return (1);
 	return (0);
 }
@@ -38,12 +38,12 @@ void	rush(int x, int y)
 		{
 			if (in_walls(x, y, col, row))
 			{
-				if (in_corners(x, y, col, row))
-					ft_putchar('o');
-				else if (in_edge_col(x, col))
-					ft_putchar('|');
+				if (!in_corners(x, y, col, row))
+					ft_putchar('B');
+				else if (in_top_row(row))
+					ft_putchar('A');
 				else
-					ft_putchar('-');
+					ft_putchar('C');
 			}
 			else
 				ft_putchar(' ');
