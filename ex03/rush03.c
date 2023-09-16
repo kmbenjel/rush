@@ -7,13 +7,6 @@ int	in_left_col(int col)
 	return (0);
 }
 
-int	in_right_col(int x, int col)
-{
-	if (col == x - 1)
-		return (1);
-	return (0);
-}
-
 int	in_walls(int x, int y, int col, int row)
 {
 	if (col == 0 || col == x - 1)
